@@ -1,7 +1,7 @@
 # Agent-based modeling simulation of Monkeypox transmission in Colombo city that incorporates transportation dynamics to examine its spread and impact.
 
 ## Background
-The highest population density in Sri Lanka is found in Colombo City, with a density of 13,364 km^2. In this study, we simulate the transmission dynamics of Mpox within a 1 km^2 region of Colombo City. Our employs agent-based modeling to represent interactions between humans based on their travel modes. To simulate this, Analogic software was used. There are only three classes. Rodent and human agents are the two primary classes. Define all parameters in the main class. For each agent, a class-state diagram for humans and rodents is defined.
+The highest population density in Sri Lanka is found in Colombo City, with a density of 13,364 km^2. In this study, we simulate the transmission dynamics of Mpox within a 1 km^2 region of Colombo City. Agent-based modeling to represent interactions between humans based on their travel modes. To simulate this, Analogic software was used. There are only three classes. Rodent and human agents are the two primary classes. Define all parameters in the main class. For each agent, a class-state diagram for humans and rodents is defined.
 
 ## Model Parameters
 
