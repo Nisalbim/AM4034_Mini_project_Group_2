@@ -27,11 +27,11 @@ The highest population density in Sri Lanka is found in Colombo City, with a den
 | μh        | Natural mortality rate of humans                | 0.000243665 | per week   |
 | μr        | Natural mortality rate of rodents               | 0.0012    | per week     |
 
-## Population Assumptions
+## Assumptions
 - The total population of Colombo District uses both private and public transportation methods.
 - Initially, one rodent was infected. 
 
-## Disease Dynamics
+## Disease Dynamics in Human-agent
 - All individuals in the total population are initially in the susceptible state.
 - Exposed humans do not get infected, and only α_h fraction of the exposed humans become infected with a transmission rate of σ_h. Others return to the susceptible state.
 - Infected humans can move into an isolated state with a probability of ρ. Isolated individuals are infected but not infectious.
@@ -40,7 +40,7 @@ The highest population density in Sri Lanka is found in Colombo City, with a den
 - Infected humans in the infectious state die at a rate of δ_h due to Mpox, higher than the natural mortality rate μ_h.
 - Monkeypox can be transmitted to humans by both humans and rodents. Susceptible humans can be exposed to infected rodents with a contact rate of β_1.
 
-## Rodent Dynamics
+##  Disease Dynamics in Rodent agent
 - Susceptible rodents become exposed to infected rodents with a contact rate of β_2.
 - Disease transmission to rodents is assumed to occur only between rodents with a rate of σ_r.
 - Only α_r fraction of exposed rodents move to the infectious state, while others return to the susceptible state.
