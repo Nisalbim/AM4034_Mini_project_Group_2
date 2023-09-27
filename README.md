@@ -1,18 +1,20 @@
-# Monkeypox Transmission Dynamics Simulation
+# Agent-based modeling simulation of Monkeypox transmission in Colombo city that incorporates transportation dynamics to examine its spread and impact.
 
-## Introduction
+## Background
+The highest population density in Sri Lanka is found in Colombo City, with a density of 13,364 km^2. In this study, we simulate the transmission dynamics of Mpox within a 1 km^2 region of Colombo City. Agent-based modeling to represent interactions between humans based on their travel modes. To simulate this, Analogic software was used. There are only three classes. Rodent and human agents are the two primary classes. Define all parameters in the main class. For each agent, a class-state diagram for humans and rodents is defined.
 
-This repository presents an Agent-Based Modeling (ABM) approach to simulate the transmission dynamics of Monkeypox (Mpox) based on human transportation modes in a 1 km² area of Colombo city. Monkeypox is a contagious disease caused by a virus, with potential transmission routes from person to person and from animals to humans.
+## Simulation
+// Default value of ϕ in AnyLogic is 0.441
+double phiDefault = 0.441;
 
-### Background
+// Simulation 1: Setting ϕ to 0.3
+double phiSimulation1 = 0.3;
 
-Mpox transmission dynamics have traditionally been modeled using compartmental models with Ordinary Differential Equations (ODEs). However, this project employs an ABM approach to provide a more detailed individual-level perspective of the population, allowing us to observe how infection dynamics change with varying fractions of private transportation users.
+// Simulation 2: Setting ϕ to 0.5
+double phiSimulation2 = 0.5;
 
-## Methodology
 
-### Transmission Model Parameters
-
-The model utilizes the following parameter values:
+## Model Parameters
 
 | Parameter | Description                                      | Value     | Unit          |
 |-----------|--------------------------------------------------|-----------|---------------|
@@ -36,42 +38,23 @@ The model utilizes the following parameter values:
 | μh        | Natural mortality rate of humans                | 0.000243665 | per week   |
 | μr        | Natural mortality rate of rodents               | 0.0012    | per week     |
 
-(Include the rest of the parameter values from Table 1)
+## Assumptions
+- The total population of Colombo District uses both private and public transportation methods.
+- Initially, one rodent was infected. 
 
-### Agent-Based Modeling
+## Disease Dynamics in Human-agent
+- All individuals in the total population are initially in the susceptible state.
+- Exposed humans do not get infected, and only α_h fraction of the exposed humans become infected with a transmission rate of σ_h. Others return to the susceptible state.
+- Infected humans can move into an isolated state with a probability of ρ. Isolated individuals are infected but not infectious.
+- Infectious individuals can move to the recovered state with rates τ (isolated) and γ (infectious).
+- After recovery, individuals gain natural immunity and do not return to the susceptible state.
+- Infected humans in the infectious state die at a rate of δ_h due to Mpox, higher than the natural mortality rate μ_h.
+- Monkeypox can be transmitted to humans by both humans and rodents. Susceptible humans can be exposed to infected rodents with a contact rate of β_1.
 
-The simulation utilizes an ABM approach, where agents represent individuals in the system. Two agent classes, human and rodent agents, are considered. Human transportation mode (public or private) is a characteristic of human agents. The model accounts for various states, such as susceptible, exposed, isolated, infectious, and recovered, for both human and rodent agents.
+##  Disease Dynamics in Rodent Agent
+- Susceptible rodents become exposed to infected rodents with a contact rate of β_2.
+- Disease transmission to rodents is assumed to occur only between rodents with a rate of σ_r.
+- Only α_r fraction of exposed rodents move to the infectious state, while others return to the susceptible state.
+- Rodent recovery and death rates are not discussed.
 
-## Results
-
-The simulation results demonstrate how the transmission dynamics of Mpox change with varying fractions of private transportation users. Three experiments were conducted with different fractions: 0.3, 0.441, and 0.5. The number of infected individuals and deaths were tracked over 1000 days for each experiment. Detailed graphs and data can be found in the project documentation.
-
-### Experiment 1: ϕ = 0.3
-
-- Total Infected: 29
-- Total Deaths: 6
-- Public Infected: 17
-- Private Infected: 12
-
-(Include results for experiments 2 and 3)
-
-## Discussion
-
-(Add a discussion section where you analyze the results and discuss their implications.)
-
-## Conclusion
-
-(Include a conclusion summarizing the findings and potential future work.)
-
-## Usage
-
-(Provide instructions on how to run the simulation or use the code.)
-
-## Contributors
-
-- [Your Name](https://github.com/yourusername)
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
+This simulation investigates the complex dynamics of Mpox transmission in an urban environment, considering transportation-type factors.
