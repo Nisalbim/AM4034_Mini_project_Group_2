@@ -4,7 +4,7 @@ This repository contains the source code and documentation for a project that us
 
 ## Project Overview
 
-Monkeypox is a contagious disease caused by a virus that can be transmitted from person to person and from animals to humans. This project explores the transmission dynamics of Mpox using an ABM approach, which provides a more detailed and individual-level perspective compared to traditional compartmental models.
+Monkeypox is a contagious disease caused by a virus that can be transmitted from person to person and from animal to humans. This project explores the transmission dynamics of Mpox using an ABM approach, which provides a more detailed and individual-level perspective compared to traditional compartmental models.
 
 ## Table 1: Parameter Values
 
